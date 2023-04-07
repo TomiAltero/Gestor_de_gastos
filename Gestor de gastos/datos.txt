@@ -1,0 +1,4 @@
+{"Monto": 564654, "Fecha": "00-04-28", "Nombre": "gregre"}
+{"Monto": 897978, "Fecha": "20-02-08", "Nombre": "htrhtr"}
+{"Monto": 654654654, "Fecha": "32-02-06", "Nombre": "htrhtr"}
+{"Monto": 45765756, "Fecha": "99-06-18", "Nombre": "Educacion"}
