@@ -1,4 +1,5 @@
 import mysql.connector
+from datetime import datetime
 
 bd = mysql.connector.connect(
     host = "localhost",
@@ -7,12 +8,17 @@ bd = mysql.connector.connect(
     database = "bd_gastos"
 )
 
-
 def ingresar_datos():
     monto = int(input("Ingrese el monto del gasto: "))
 
-    fecha = input("Ingrese la fecha del gasto (AÑO/MES/DÍA): ")
-
+    while True:
+        fecha_str = input("Ingrese la fecha del gasto (AÑO/MES/DÍA): ")
+        try:
+            fecha = datetime.strptime(fecha_str, "%Y/%m/%d")
+            break
+        except ValueError as err:
+            print("Ingrese una fecha correcta")
+    
     nombre = input("Ingrese el nombre del gasto: ")
 
     cursor = bd.cursor()
@@ -23,6 +29,5 @@ def ingresar_datos():
     cursor.execute(sql, valores)
 
     bd.commit()
-
 
 ingresar_datos()
